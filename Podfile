@@ -6,7 +6,13 @@ target 'GithubGQL' do
   use_frameworks!
 
   # Pods for GithubGQL
-  pod 'Apollo'
+  pod 'ReactorKit'
+  
+  # Rx
+  pod 'RxCocoa'
+  pod 'RxOptional'
+  pod 'RxDataSources'
+  pod 'RxApollo'
   
   target 'GithubGQLTests' do
     inherit! :search_paths

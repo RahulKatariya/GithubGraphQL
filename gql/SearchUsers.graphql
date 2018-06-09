@@ -1,9 +1,10 @@
 query SearchUsers($q: String!) {
-  search(
-    first: 50,
-    query: $q,
-    type: USER
-  ) {
-      userCount
+  search(first: 100, query: $q, type: USER) {
+    nodes {
+      ... on User {
+        id
+        name
+      }
     }
+  }
 }

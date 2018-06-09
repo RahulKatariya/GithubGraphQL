@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		35C0A21220CC001800D5CB2B /* GithubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C0A21120CC001800D5CB2B /* GithubAPI.swift */; };
+		35706AF920CD14B3007CFD14 /* User+GraphQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35706AF820CD14B3007CFD14 /* User+GraphQL.swift */; };
+		35C0A21A20CC0B4800D5CB2B /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C0A21920CC0B4800D5CB2B /* API.swift */; };
+		35C0A21C20CC0F9E00D5CB2B /* SearchUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C0A21B20CC0F9E00D5CB2B /* SearchUsersViewController.swift */; };
+		35C0A21E20CC1FAA00D5CB2B /* SearchUsersReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C0A21D20CC1FAA00D5CB2B /* SearchUsersReactor.swift */; };
+		35C0A22020CC3A0800D5CB2B /* GQLSearchUsersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C0A21F20CC3A0800D5CB2B /* GQLSearchUsersService.swift */; };
+		35C0A22220CC3CF400D5CB2B /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C0A22120CC3CF400D5CB2B /* APIClient.swift */; };
+		35C0A22C20CC534200D5CB2B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C0A22B20CC534200D5CB2B /* User.swift */; };
 		35DBDBCF20CBFB09006AB043 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DBDBCE20CBFB09006AB043 /* AppDelegate.swift */; };
-		35DBDBD120CBFB09006AB043 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DBDBD020CBFB09006AB043 /* ViewController.swift */; };
 		35DBDBD420CBFB09006AB043 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35DBDBD220CBFB09006AB043 /* Main.storyboard */; };
 		35DBDBD620CBFB0A006AB043 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35DBDBD520CBFB0A006AB043 /* Assets.xcassets */; };
 		35DBDBD920CBFB0A006AB043 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35DBDBD720CBFB0A006AB043 /* LaunchScreen.storyboard */; };
@@ -39,10 +44,15 @@
 
 /* Begin PBXFileReference section */
 		29900868CA02AE7DFF9B39BA /* Pods-GithubGQLUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubGQLUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GithubGQLUITests/Pods-GithubGQLUITests.release.xcconfig"; sourceTree = "<group>"; };
-		35C0A21120CC001800D5CB2B /* GithubAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubAPI.swift; sourceTree = "<group>"; };
+		35706AF820CD14B3007CFD14 /* User+GraphQL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+GraphQL.swift"; sourceTree = "<group>"; };
+		35C0A21920CC0B4800D5CB2B /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		35C0A21B20CC0F9E00D5CB2B /* SearchUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsersViewController.swift; sourceTree = "<group>"; };
+		35C0A21D20CC1FAA00D5CB2B /* SearchUsersReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsersReactor.swift; sourceTree = "<group>"; };
+		35C0A21F20CC3A0800D5CB2B /* GQLSearchUsersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GQLSearchUsersService.swift; sourceTree = "<group>"; };
+		35C0A22120CC3CF400D5CB2B /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		35C0A22B20CC534200D5CB2B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		35DBDBCB20CBFB09006AB043 /* GithubGQL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubGQL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35DBDBCE20CBFB09006AB043 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		35DBDBD020CBFB09006AB043 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		35DBDBD320CBFB09006AB043 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		35DBDBD520CBFB0A006AB043 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35DBDBD820CBFB0A006AB043 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -91,6 +101,76 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35706AFB20CD34F3007CFD14 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				35706AFC20CD34FD007CFD14 /* SearchUsers */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		35706AFC20CD34FD007CFD14 /* SearchUsers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SearchUsers;
+			sourceTree = "<group>";
+		};
+		35C0A21520CC08E100D5CB2B /* SearchUsers */ = {
+			isa = PBXGroup;
+			children = (
+				35C0A21B20CC0F9E00D5CB2B /* SearchUsersViewController.swift */,
+				35C0A22920CC532C00D5CB2B /* Reactor */,
+				35C0A22820CC532400D5CB2B /* Service */,
+			);
+			path = SearchUsers;
+			sourceTree = "<group>";
+		};
+		35C0A21820CC0B0F00D5CB2B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				35C0A22120CC3CF400D5CB2B /* APIClient.swift */,
+				35C0A21920CC0B4800D5CB2B /* API.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		35C0A22320CC41B700D5CB2B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				35DBDBD520CBFB0A006AB043 /* Assets.xcassets */,
+				35DBDBD720CBFB0A006AB043 /* LaunchScreen.storyboard */,
+				35DBDBDA20CBFB0B006AB043 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		35C0A22720CC52F900D5CB2B /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				35C0A21520CC08E100D5CB2B /* SearchUsers */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		35C0A22820CC532400D5CB2B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				35C0A21F20CC3A0800D5CB2B /* GQLSearchUsersService.swift */,
+				35C0A22B20CC534200D5CB2B /* User.swift */,
+				35706AF820CD14B3007CFD14 /* User+GraphQL.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		35C0A22920CC532C00D5CB2B /* Reactor */ = {
+			isa = PBXGroup;
+			children = (
+				35C0A21D20CC1FAA00D5CB2B /* SearchUsersReactor.swift */,
+			);
+			path = Reactor;
+			sourceTree = "<group>";
+		};
 		35DBDBC220CBFB09006AB043 = {
 			isa = PBXGroup;
 			children = (
@@ -117,12 +197,10 @@
 			isa = PBXGroup;
 			children = (
 				35DBDBCE20CBFB09006AB043 /* AppDelegate.swift */,
-				35DBDBD020CBFB09006AB043 /* ViewController.swift */,
 				35DBDBD220CBFB09006AB043 /* Main.storyboard */,
-				35C0A21120CC001800D5CB2B /* GithubAPI.swift */,
-				35DBDBD520CBFB0A006AB043 /* Assets.xcassets */,
-				35DBDBD720CBFB0A006AB043 /* LaunchScreen.storyboard */,
-				35DBDBDA20CBFB0B006AB043 /* Info.plist */,
+				35C0A22720CC52F900D5CB2B /* Scenes */,
+				35C0A21820CC0B0F00D5CB2B /* API */,
+				35C0A22320CC41B700D5CB2B /* Supporting Files */,
 			);
 			path = GithubGQL;
 			sourceTree = "<group>";
@@ -131,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				35DBDBE320CBFB0B006AB043 /* GithubGQLTests.swift */,
+				35706AFB20CD34F3007CFD14 /* Scenes */,
 				35DBDBE520CBFB0B006AB043 /* Info.plist */,
 			);
 			path = GithubGQLTests;
@@ -332,7 +411,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "APOLLO_FRAMEWORK_PATH=\"$(eval find $FRAMEWORK_SEARCH_PATHS -name \"Apollo.framework\" -maxdepth 1)\"\n\nif [ -z \"$APOLLO_FRAMEWORK_PATH\" ]; then\necho \"error: Couldn't find Apollo.framework in FRAMEWORK_SEARCH_PATHS; make sure to add the framework to your project.\"\nexit 1\nfi\n\ncd \"${SRCROOT}/gql\"\n$APOLLO_FRAMEWORK_PATH/check-and-run-apollo-codegen.sh generate $(find . -name '*.graphql') --schema ./../schema.json --output ./../GithubGQL/GithubAPI.swift";
+			shellScript = "APOLLO_FRAMEWORK_PATH=\"$(eval find $FRAMEWORK_SEARCH_PATHS -name \"Apollo.framework\" -maxdepth 1)\"\n\nif [ -z \"$APOLLO_FRAMEWORK_PATH\" ]; then\necho \"error: Couldn't find Apollo.framework in FRAMEWORK_SEARCH_PATHS; make sure to add the framework to your project.\"\nexit 1\nfi\n\ncd \"${SRCROOT}/gql\"\n$APOLLO_FRAMEWORK_PATH/check-and-run-apollo-codegen.sh generate $(find . -name '*.graphql') --schema ./../schema.json --output ./../GithubGQL/API/API.swift";
 		};
 		390620FE6830B2978E7F190F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -456,10 +535,24 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GithubGQL/Pods-GithubGQL-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Apollo/Apollo.framework",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactorKit/ReactorKit.framework",
+				"${BUILT_PRODUCTS_DIR}/RxApollo/RxApollo.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
+				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Apollo.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactorKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxApollo.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -473,9 +566,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35DBDBD120CBFB09006AB043 /* ViewController.swift in Sources */,
-				35C0A21220CC001800D5CB2B /* GithubAPI.swift in Sources */,
+				35C0A22220CC3CF400D5CB2B /* APIClient.swift in Sources */,
 				35DBDBCF20CBFB09006AB043 /* AppDelegate.swift in Sources */,
+				35706AF920CD14B3007CFD14 /* User+GraphQL.swift in Sources */,
+				35C0A21E20CC1FAA00D5CB2B /* SearchUsersReactor.swift in Sources */,
+				35C0A22C20CC534200D5CB2B /* User.swift in Sources */,
+				35C0A21A20CC0B4800D5CB2B /* API.swift in Sources */,
+				35C0A21C20CC0F9E00D5CB2B /* SearchUsersViewController.swift in Sources */,
+				35C0A22020CC3A0800D5CB2B /* GQLSearchUsersService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -649,7 +747,9 @@
 			baseConfigurationReference = C588B78F69FDDDDCA5262D01 /* Pods-GithubGQL.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = GithubGQL/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -657,6 +757,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.RahulKatariya.GithubGQL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -667,7 +768,9 @@
 			baseConfigurationReference = EFAF416B46278FAEBFC12D32 /* Pods-GithubGQL.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = GithubGQL/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -675,6 +778,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.RahulKatariya.GithubGQL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

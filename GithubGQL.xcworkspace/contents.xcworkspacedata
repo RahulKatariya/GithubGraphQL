@@ -7,4 +7,22 @@
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:gql">
+   </FileRef>
+   <FileRef
+      location = "group:schema.json">
+   </FileRef>
+   <FileRef
+      location = "group:package-lock.json">
+   </FileRef>
+   <FileRef
+      location = "group:package.json">
+   </FileRef>
+   <FileRef
+      location = "group:Podfile">
+   </FileRef>
+   <FileRef
+      location = "group:Podfile.lock">
+   </FileRef>
 </Workspace>

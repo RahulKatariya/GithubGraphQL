@@ -1,14 +1,41 @@
 PODS:
-  - Apollo (0.8.0):
-    - Apollo/Core (= 0.8.0)
-  - Apollo/Core (0.8.0)
+  - Apollo (0.7.0):
+    - Apollo/Core (= 0.7.0)
+  - Apollo/Core (0.7.0)
+  - Differentiator (3.0.2)
+  - ReactorKit (1.1.0):
+    - RxSwift (>= 4.0.0)
+  - RxApollo (0.6.0):
+    - Apollo (~> 0.7.0)
+    - RxSwift (~> 4.0)
+  - RxCocoa (4.1.2):
+    - RxSwift (~> 4.0)
+  - RxDataSources (3.0.2):
+    - Differentiator (~> 3.0)
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
+  - RxOptional (3.4.0):
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
+  - RxSwift (4.1.2)
 
 DEPENDENCIES:
-  - Apollo
+  - ReactorKit
+  - RxApollo
+  - RxCocoa
+  - RxDataSources
+  - RxOptional
 
 SPEC CHECKSUMS:
-  Apollo: 66e0f52289551545adb7ecdd994e713fdbae26eb
+  Apollo: d6649ac06168660e70c6226c4eadfc0770791ba5
+  Differentiator: a87be69eba49ec4ab460c7671143ee3a9eececfd
+  ReactorKit: 26470a9eff5094fae909a30af0be7cd0cf8a182d
+  RxApollo: 7d8a1ae06418a7a8dc7e132369ba9232d3a202a9
+  RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
+  RxDataSources: cb7c31e652a87ebb919da45f716bbb87b3765f6b
+  RxOptional: fabc37fc8e3cf4c336ebaeb5c92b576c64b2e6c5
+  RxSwift: e49536837d9901277638493ea537394d4b55f570
 
-PODFILE CHECKSUM: b3abca4f22a518cfb00c3f020585de793ff6770c
+PODFILE CHECKSUM: 327c080454b79c627ff726b6520886299701f597
 
 COCOAPODS: 1.4.0

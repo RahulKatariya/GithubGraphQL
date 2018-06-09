@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35C0A21220CC001800D5CB2B /* GithubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C0A21120CC001800D5CB2B /* GithubAPI.swift */; };
 		35DBDBCF20CBFB09006AB043 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DBDBCE20CBFB09006AB043 /* AppDelegate.swift */; };
 		35DBDBD120CBFB09006AB043 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DBDBD020CBFB09006AB043 /* ViewController.swift */; };
 		35DBDBD420CBFB09006AB043 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35DBDBD220CBFB09006AB043 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		29900868CA02AE7DFF9B39BA /* Pods-GithubGQLUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubGQLUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GithubGQLUITests/Pods-GithubGQLUITests.release.xcconfig"; sourceTree = "<group>"; };
+		35C0A21120CC001800D5CB2B /* GithubAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubAPI.swift; sourceTree = "<group>"; };
 		35DBDBCB20CBFB09006AB043 /* GithubGQL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubGQL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35DBDBCE20CBFB09006AB043 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35DBDBD020CBFB09006AB043 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				35DBDBCE20CBFB09006AB043 /* AppDelegate.swift */,
 				35DBDBD020CBFB09006AB043 /* ViewController.swift */,
 				35DBDBD220CBFB09006AB043 /* Main.storyboard */,
+				35C0A21120CC001800D5CB2B /* GithubAPI.swift */,
 				35DBDBD520CBFB0A006AB043 /* Assets.xcassets */,
 				35DBDBD720CBFB0A006AB043 /* LaunchScreen.storyboard */,
 				35DBDBDA20CBFB0B006AB043 /* Info.plist */,
@@ -173,6 +176,7 @@
 			buildConfigurationList = 35DBDBF320CBFB0B006AB043 /* Build configuration list for PBXNativeTarget "GithubGQL" */;
 			buildPhases = (
 				A4D18FE72EB7DA7F905B1C2E /* [CP] Check Pods Manifest.lock */,
+				35C0A21020CBFF2E00D5CB2B /* Generate Apollo GraphQL API */,
 				35DBDBC720CBFB09006AB043 /* Sources */,
 				35DBDBC820CBFB09006AB043 /* Frameworks */,
 				35DBDBC920CBFB09006AB043 /* Resources */,
@@ -316,6 +320,20 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GithubGQL/Pods-GithubGQL-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		35C0A21020CBFF2E00D5CB2B /* Generate Apollo GraphQL API */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Apollo GraphQL API";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "APOLLO_FRAMEWORK_PATH=\"$(eval find $FRAMEWORK_SEARCH_PATHS -name \"Apollo.framework\" -maxdepth 1)\"\n\nif [ -z \"$APOLLO_FRAMEWORK_PATH\" ]; then\necho \"error: Couldn't find Apollo.framework in FRAMEWORK_SEARCH_PATHS; make sure to add the framework to your project.\"\nexit 1\nfi\n\ncd \"${SRCROOT}/gql\"\n$APOLLO_FRAMEWORK_PATH/check-and-run-apollo-codegen.sh generate $(find . -name '*.graphql') --schema ./../schema.json --output ./../GithubGQL/GithubAPI.swift";
+		};
 		390620FE6830B2978E7F190F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -436,9 +454,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GithubGQL/Pods-GithubGQL-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Apollo/Apollo.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Apollo.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -453,6 +474,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				35DBDBD120CBFB09006AB043 /* ViewController.swift in Sources */,
+				35C0A21220CC001800D5CB2B /* GithubAPI.swift in Sources */,
 				35DBDBCF20CBFB09006AB043 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -629,7 +651,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = GithubGQL/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.RahulKatariya.GithubGQL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -644,7 +669,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = GithubGQL/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.RahulKatariya.GithubGQL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -660,7 +688,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = GithubGQLTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.RahulKatariya.GithubGQLTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -677,7 +709,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = GithubGQLTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.RahulKatariya.GithubGQLTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -693,7 +729,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = GithubGQLUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.RahulKatariya.GithubGQLUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -709,7 +749,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = GithubGQLUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.RahulKatariya.GithubGQLUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

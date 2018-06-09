@@ -6,7 +6,8 @@ target 'GithubGQL' do
   use_frameworks!
 
   # Pods for GithubGQL
-
+  pod 'Apollo'
+  
   target 'GithubGQLTests' do
     inherit! :search_paths
     # Pods for testing

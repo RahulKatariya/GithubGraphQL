@@ -1,0 +1,9 @@
+query SearchUsers($q: String!) {
+  search(
+    first: 50,
+    query: $q,
+    type: USER
+  ) {
+      userCount
+    }
+}

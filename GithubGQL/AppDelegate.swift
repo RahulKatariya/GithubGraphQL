@@ -7,6 +7,15 @@
 //
 
 import UIKit
+import Apollo
+
+let graphQLEndpoint = "https://api.github.com/graphql"
+let apolloClient: ApolloClient = {
+    let configuration = URLSessionConfiguration.default
+    configuration.httpAdditionalHeaders = ["Authorization": "Bearer \(ProcessInfo.processInfo.environment["GITHUB_TOKEN"]!)"]
+    let url = URL(string: graphQLEndpoint)!
+    return ApolloClient(networkTransport: HTTPNetworkTransport(url: url, configuration: configuration))
+}()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +25,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let query = SearchUsersQuery(q: "Rahul K")
+        apolloClient.fetch(query: query, cachePolicy: .fetchIgnoringCacheData, queue: .main) { (result, error) in
+            print(result ?? error!)
+        }
         return true
     }
 

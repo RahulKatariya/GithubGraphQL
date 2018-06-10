@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		35706AF920CD14B3007CFD14 /* User+GraphQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35706AF820CD14B3007CFD14 /* User+GraphQL.swift */; };
+		35706AFF20CD45BC007CFD14 /* MockSearchUsersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35706AFE20CD45BC007CFD14 /* MockSearchUsersService.swift */; };
+		35706B0120CD5025007CFD14 /* SearchUsersReactorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35706B0020CD5025007CFD14 /* SearchUsersReactorSpec.swift */; };
 		35C0A21A20CC0B4800D5CB2B /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C0A21920CC0B4800D5CB2B /* API.swift */; };
 		35C0A21C20CC0F9E00D5CB2B /* SearchUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C0A21B20CC0F9E00D5CB2B /* SearchUsersViewController.swift */; };
 		35C0A21E20CC1FAA00D5CB2B /* SearchUsersReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C0A21D20CC1FAA00D5CB2B /* SearchUsersReactor.swift */; };
@@ -18,7 +20,6 @@
 		35DBDBD420CBFB09006AB043 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35DBDBD220CBFB09006AB043 /* Main.storyboard */; };
 		35DBDBD620CBFB0A006AB043 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35DBDBD520CBFB0A006AB043 /* Assets.xcassets */; };
 		35DBDBD920CBFB0A006AB043 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35DBDBD720CBFB0A006AB043 /* LaunchScreen.storyboard */; };
-		35DBDBE420CBFB0B006AB043 /* GithubGQLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DBDBE320CBFB0B006AB043 /* GithubGQLTests.swift */; };
 		35DBDBEF20CBFB0B006AB043 /* GithubGQLUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DBDBEE20CBFB0B006AB043 /* GithubGQLUITests.swift */; };
 		38AB496D46C2BB6394CF2306 /* Pods_GithubGQLTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B60BD472576B390FE333E9C0 /* Pods_GithubGQLTests.framework */; };
 		7B7AB7F81A3D244BC19E198D /* Pods_GithubGQL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AED05146F851C4321392DF6 /* Pods_GithubGQL.framework */; };
@@ -45,6 +46,8 @@
 /* Begin PBXFileReference section */
 		29900868CA02AE7DFF9B39BA /* Pods-GithubGQLUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubGQLUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GithubGQLUITests/Pods-GithubGQLUITests.release.xcconfig"; sourceTree = "<group>"; };
 		35706AF820CD14B3007CFD14 /* User+GraphQL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+GraphQL.swift"; sourceTree = "<group>"; };
+		35706AFE20CD45BC007CFD14 /* MockSearchUsersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearchUsersService.swift; sourceTree = "<group>"; };
+		35706B0020CD5025007CFD14 /* SearchUsersReactorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsersReactorSpec.swift; sourceTree = "<group>"; };
 		35C0A21920CC0B4800D5CB2B /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		35C0A21B20CC0F9E00D5CB2B /* SearchUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsersViewController.swift; sourceTree = "<group>"; };
 		35C0A21D20CC1FAA00D5CB2B /* SearchUsersReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsersReactor.swift; sourceTree = "<group>"; };
@@ -58,7 +61,6 @@
 		35DBDBD820CBFB0A006AB043 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		35DBDBDA20CBFB0B006AB043 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35DBDBDF20CBFB0B006AB043 /* GithubGQLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubGQLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		35DBDBE320CBFB0B006AB043 /* GithubGQLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubGQLTests.swift; sourceTree = "<group>"; };
 		35DBDBE520CBFB0B006AB043 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35DBDBEA20CBFB0B006AB043 /* GithubGQLUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubGQLUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		35DBDBEE20CBFB0B006AB043 /* GithubGQLUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubGQLUITests.swift; sourceTree = "<group>"; };
@@ -112,8 +114,18 @@
 		35706AFC20CD34FD007CFD14 /* SearchUsers */ = {
 			isa = PBXGroup;
 			children = (
+				35706B0020CD5025007CFD14 /* SearchUsersReactorSpec.swift */,
+				35706AFD20CD45AD007CFD14 /* Mocks */,
 			);
 			path = SearchUsers;
+			sourceTree = "<group>";
+		};
+		35706AFD20CD45AD007CFD14 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				35706AFE20CD45BC007CFD14 /* MockSearchUsersService.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		35C0A21520CC08E100D5CB2B /* SearchUsers */ = {
@@ -208,7 +220,6 @@
 		35DBDBE220CBFB0B006AB043 /* GithubGQLTests */ = {
 			isa = PBXGroup;
 			children = (
-				35DBDBE320CBFB0B006AB043 /* GithubGQLTests.swift */,
 				35706AFB20CD34F3007CFD14 /* Scenes */,
 				35DBDBE520CBFB0B006AB043 /* Info.plist */,
 			);
@@ -467,9 +478,20 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GithubGQLTests/Pods-GithubGQLTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Fakery/Fakery.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Fakery.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -581,7 +603,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35DBDBE420CBFB0B006AB043 /* GithubGQLTests.swift in Sources */,
+				35706AFF20CD45BC007CFD14 /* MockSearchUsersService.swift in Sources */,
+				35706B0120CD5025007CFD14 /* SearchUsersReactorSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

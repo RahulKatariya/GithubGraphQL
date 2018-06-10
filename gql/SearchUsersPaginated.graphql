@@ -1,0 +1,13 @@
+query SearchUsersPaginated($q: String!, $cursor: String!) {
+search(first: 10, query: $q, type: USER, after: $cursor) {
+edges {
+cursor
+node {
+... on User {
+id
+name
+}
+}
+}
+}
+}

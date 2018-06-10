@@ -8,16 +8,16 @@
 
 import Apollo
 
-extension SearchUsersQuery.Data.Search.Node {
+extension SearchUsersQuery.Data.Search.Edge {
     
     func asUserModel() -> User? {
-        guard let asUser = asUser else { return nil }
+        guard let asUser = node?.asUser else { return nil }
         return User(id: asUser.id, name: asUser.name)
     }
     
 }
 
-extension Array where Element == Optional<SearchUsersQuery.Data.Search.Node> {
+extension Array where Element == Optional<SearchUsersQuery.Data.Search.Edge> {
     
     func asUserModel() -> [User] {
         return compactMap { $0 }

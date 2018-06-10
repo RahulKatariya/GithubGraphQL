@@ -1,10 +1,13 @@
 query SearchUsers($q: String!) {
-  search(first: 100, query: $q, type: USER) {
-    nodes {
-      ... on User {
-        id
-        name
-      }
-    }
-  }
+search(first: 10, query: $q, type: USER) {
+edges {
+cursor
+node {
+... on User {
+id
+name
+}
+}
+}
+}
 }

@@ -19,13 +19,14 @@ class GQLSearchUsersService: SearchUsersServiceProtocol {
     
     func searchUsers(query: String?) -> Observable<[User]> {
         if let query = query, query.trimmingCharacters(in: .whitespaces).count > 0 {
+            let gqlQuery = SearchUsersQuery(q: query)
             let usersObservable = APIClient.default.apolloClient.rx.fetch(
-                    query: SearchUsersQuery(q: query),
+                    query: gqlQuery,
                     cachePolicy: .fetchIgnoringCacheData,
                     queue: .main
                 )
                 .asObservable()
-                .map { $0.search.nodes }
+                .map { $0.search.edges }
                 .filterNil()
                 .map { $0.asUserModel() }
             return usersObservable

@@ -38,6 +38,12 @@ class SearchUsersViewController: UIViewController, StoryboardView {
     }
     
     func bind(reactor: SearchUsersReactor) {
+        
+        searchController.rx.didDismiss
+            .map { Reactor.Action.setQuery(nil) }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
         searchController.searchBar.rx.text
             .throttle(0.3, scheduler: MainScheduler.instance)
             .map { Reactor.Action.setQuery($0) }

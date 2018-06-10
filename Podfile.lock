@@ -4,6 +4,7 @@ PODS:
   - Apollo/Core (0.7.0)
   - Differentiator (3.0.2)
   - Fakery (3.3.0)
+  - Kingfisher (4.7.0)
   - Nimble (7.1.0)
   - Quick (1.2.0)
   - ReactorKit (1.1.0):
@@ -24,6 +25,7 @@ PODS:
 
 DEPENDENCIES:
   - Fakery
+  - Kingfisher
   - Nimble
   - Quick
   - ReactorKit
@@ -36,6 +38,7 @@ SPEC CHECKSUMS:
   Apollo: d6649ac06168660e70c6226c4eadfc0770791ba5
   Differentiator: a87be69eba49ec4ab460c7671143ee3a9eececfd
   Fakery: 3aae11a87721c807c18c6456500d088c1230d3e5
+  Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
   Nimble: 9c6651c3021af6de54c3ed90a4a0a87d548f7359
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
   ReactorKit: 26470a9eff5094fae909a30af0be7cd0cf8a182d
@@ -45,6 +48,6 @@ SPEC CHECKSUMS:
   RxOptional: fabc37fc8e3cf4c336ebaeb5c92b576c64b2e6c5
   RxSwift: e49536837d9901277638493ea537394d4b55f570
 
-PODFILE CHECKSUM: 042cbe49f30a763f9b97103d6db20d2e253f6a87
+PODFILE CHECKSUM: b0efd57efb2311dcfb9382020c36ef17ad3e6bbe
 
 COCOAPODS: 1.4.0

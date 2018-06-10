@@ -1,5 +1,5 @@
 //
-//  SearchUsersViewController.swift
+//  SearchUsersTableViewController.swift
 //  GithubGQL
 //
 //  Created by Rahul Katariya on 09/06/18.
@@ -11,8 +11,9 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 import ReactorKit
+import Kingfisher
 
-class SearchUsersViewController: UITableViewController, StoryboardView {
+class SearchUsersTableViewController: UITableViewController, StoryboardView {
     
     struct Constants {
         static let cellIdentifier = "Cell"
@@ -44,6 +45,7 @@ class SearchUsersViewController: UITableViewController, StoryboardView {
     
     func bind(reactor: SearchUsersReactor) {
         
+        // Clear table view when the search has dismissed
         searchController.rx.didDismiss
             .map { Reactor.Action.setQuery(nil) }
             .bind(to: reactor.action)
@@ -53,6 +55,23 @@ class SearchUsersViewController: UITableViewController, StoryboardView {
             .throttle(0.3, scheduler: MainScheduler.instance)
             .map { Reactor.Action.setQuery($0) }
             .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        tableView.rx.willDisplayCell
+            .subscribe(onNext: { cell, indexPath in
+                let user = reactor.currentState.users[indexPath.row]
+                if let avatarUrl = user.avatarUrl,
+                    let url = URL(string: avatarUrl) {
+                    cell.imageView?.kf.setImage(with: url)
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        // Cancel Image Download Task if cell has disappeared to free up resources.
+        tableView.rx.didEndDisplayingCell
+            .subscribe(onNext: { cell, indexPath in
+                cell.imageView?.kf.cancelDownloadTask()
+            })
             .disposed(by: disposeBag)
 
         reactor.state.map { $0.users }

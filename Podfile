@@ -7,6 +7,7 @@ target 'GithubGQL' do
 
   # Pods for GithubGQL
   pod 'ReactorKit'
+  pod 'Kingfisher'
   
   # Rx
   pod 'RxCocoa'

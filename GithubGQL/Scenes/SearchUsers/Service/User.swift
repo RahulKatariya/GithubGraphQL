@@ -11,6 +11,7 @@ import Foundation
 struct User {
     let id: String
     var name: String?
+    var avatarUrl: String?
     
     init?(id: String?, name: String?) {
         guard let id = id, let name = name else { return nil }

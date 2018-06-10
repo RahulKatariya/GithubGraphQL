@@ -4,7 +4,7 @@ import Apollo
 
 public final class SearchUsersQuery: GraphQLQuery {
   public static let operationString =
-    "query SearchUsers($q: String!) {\n  search(first: 10, query: $q, type: USER) {\n    __typename\n    edges {\n      __typename\n      cursor\n      node {\n        __typename\n        ... on User {\n          id\n          name\n        }\n      }\n    }\n  }\n}"
+    "query SearchUsers($q: String!) {\n  search(first: 10, query: $q, type: USER) {\n    __typename\n    edges {\n      __typename\n      cursor\n      node {\n        __typename\n        ... on User {\n          id\n          name\n          avatarUrl\n        }\n      }\n    }\n  }\n}"
 
   public var q: String
 
@@ -166,8 +166,8 @@ public final class SearchUsersQuery: GraphQLQuery {
             return Node(snapshot: ["__typename": "MarketplaceListing"])
           }
 
-          public static func makeUser(id: GraphQLID, name: String? = nil) -> Node {
-            return Node(snapshot: ["__typename": "User", "id": id, "name": name])
+          public static func makeUser(id: GraphQLID, name: String? = nil, avatarUrl: String) -> Node {
+            return Node(snapshot: ["__typename": "User", "id": id, "name": name, "avatarUrl": avatarUrl])
           }
 
           public var __typename: String {
@@ -197,6 +197,7 @@ public final class SearchUsersQuery: GraphQLQuery {
               GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
               GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
               GraphQLField("name", type: .scalar(String.self)),
+              GraphQLField("avatarUrl", type: .nonNull(.scalar(String.self))),
             ]
 
             public var snapshot: Snapshot
@@ -205,8 +206,8 @@ public final class SearchUsersQuery: GraphQLQuery {
               self.snapshot = snapshot
             }
 
-            public init(id: GraphQLID, name: String? = nil) {
-              self.init(snapshot: ["__typename": "User", "id": id, "name": name])
+            public init(id: GraphQLID, name: String? = nil, avatarUrl: String) {
+              self.init(snapshot: ["__typename": "User", "id": id, "name": name, "avatarUrl": avatarUrl])
             }
 
             public var __typename: String {
@@ -234,6 +235,16 @@ public final class SearchUsersQuery: GraphQLQuery {
               }
               set {
                 snapshot.updateValue(newValue, forKey: "name")
+              }
+            }
+
+            /// A URL pointing to the user's public avatar.
+            public var avatarUrl: String {
+              get {
+                return snapshot["avatarUrl"]! as! String
+              }
+              set {
+                snapshot.updateValue(newValue, forKey: "avatarUrl")
               }
             }
           }

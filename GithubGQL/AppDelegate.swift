@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         let navigationController = self.window?.rootViewController as! UINavigationController
         navigationController.navigationBar.prefersLargeTitles = true
-        let viewController = navigationController.viewControllers.first as! SearchUsersViewController
+        let viewController = navigationController.viewControllers.first as! SearchUsersTableViewController
         viewController.reactor = SearchUsersReactor(searchUsersService: GQLSearchUsersService())
         return true
     }

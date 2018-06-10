@@ -6,6 +6,7 @@ node {
 ... on User {
 id
 name
+avatarUrl
 }
 }
 }

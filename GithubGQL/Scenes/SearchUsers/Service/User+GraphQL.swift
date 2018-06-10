@@ -12,7 +12,9 @@ extension SearchUsersQuery.Data.Search.Edge {
     
     func asUserModel() -> User? {
         guard let asUser = node?.asUser else { return nil }
-        return User(id: asUser.id, name: asUser.name)
+        var user = User(id: asUser.id, name: asUser.name)
+        user?.avatarUrl = asUser.avatarUrl
+        return user
     }
     
 }

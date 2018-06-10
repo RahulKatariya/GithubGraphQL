@@ -75,7 +75,9 @@ class SearchUsersTableViewController: UITableViewController, StoryboardView {
             .disposed(by: disposeBag)
 
         reactor.state.map { $0.users }
-            .bind(to: tableView.rx.items(cellIdentifier: Constants.cellIdentifier)) { index, user, cell in
+            .bind(
+                to: tableView.rx.items(cellIdentifier: Constants.cellIdentifier)
+            ) { index, user, cell in
                 cell.textLabel?.text = user.name
             }
             .disposed(by: disposeBag)

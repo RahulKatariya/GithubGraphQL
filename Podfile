@@ -22,9 +22,4 @@ target 'GithubGQL' do
     pod 'Fakery'
   end
 
-  target 'GithubGQLUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
 end

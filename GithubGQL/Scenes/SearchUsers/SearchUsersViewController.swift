@@ -12,7 +12,7 @@ import RxCocoa
 import RxDataSources
 import ReactorKit
 
-class SearchUsersViewController: UIViewController, StoryboardView {
+class SearchUsersViewController: UITableViewController, StoryboardView {
     
     struct Constants {
         static let cellIdentifier = "Cell"
@@ -22,7 +22,6 @@ class SearchUsersViewController: UIViewController, StoryboardView {
     var disposeBag = DisposeBag()
     
     // UI
-    @IBOutlet var tableView: UITableView!
     let searchController: UISearchController = {
         let sc = UISearchController(searchResultsController: nil)
         sc.dimsBackgroundDuringPresentation = false
@@ -30,6 +29,12 @@ class SearchUsersViewController: UIViewController, StoryboardView {
     }()
     
     /// MARK: View Life Cycle
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        tableView.dataSource = nil
+        tableView.delegate = nil
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
